@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio - Sopiaa Imutt</title>
+  <style>
+    /* === ELEGANT BLUE & WHITE PORTFOLIO === */
+    :root{
+      --blue-900: #0b63b7;
+      --blue-700: #1980e6;
+      --blue-400: #6fb3ff;
+      --white: #ffffff;
+      --sidebar-w: 250px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      display:flex;
+      min-height:100vh;
+      background:linear-gradient(180deg,#f8fbff 0%,#e6f0ff 100%);
+      font-family:Arial, Helvetica, sans-serif;
+      color:#0b2948;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      width:var(--sidebar-w);
+      background:linear-gradient(180deg,var(--blue-900),var(--blue-700));
+      color:var(--white);
+      display:flex;
+      flex-direction:column;
+      padding:25px 15px;
+      position:fixed;
+      top:0;bottom:0;left:0;
+      transition:transform 0.3s ease;
+    }
+    .brand{
+      font-size:22px;
+      font-weight:bold;
+      letter-spacing:1px;
+      text-align:center;
+      margin-bottom:25px;
+    }
+    .nav a{
+      display:block;
+      color:#fff;
+      text-decoration:none;
+      padding:12px 15px;
+      border-radius:8px;
+      margin-bottom:5px;
+      transition:0.2s;
+    }
+    .nav a:hover, .nav a.active{
+      background:rgba(255,255,255,0.2);
+    }
+    .lang-switch{
+      margin-top:auto;
+      display:flex;
+      justify-content:center;
+      gap:8px;
+    }
+    .lang{
+      border:1px solid rgba(255,255,255,0.6);
+      background:transparent;
+      color:#fff;
+      padding:5px 8px;
+      border-radius:6px;
+      cursor:pointer;
+    }
+    .lang.active{
+      background:#fff;
+      color:var(--blue-900);
+      font-weight:bold;
+    }
+
+    /* Main */
+    .main{
+      margin-left:var(--sidebar-w);
+      flex:1;
+      padding:25px;
+    }
+    .page{
+      display:none;
+      animation:fade 0.3s ease;
+    }
+    .page.active{display:block}
+    @keyframes fade{from{opacity:0}to{opacity:1}}
+    h2{color:var(--blue-900);margin-bottom:10px}
+    p{line-height:1.6;margin-bottom:10px}
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .skill{
+      background:#fff;
+      border:1px solid #cdddf7;
+      border-radius:8px;
+      padding:10px 15px;
+      box-shadow:0 3px 10px rgba(0,0,0,0.05);
+    }
+    form input,form textarea{
+      width:100%;
+      padding:10px;
+      margin-bottom:10px;
+      border:1px solid #ccc;
+      border-radius:6px;
+    }
+    form button{
+      background:var(--blue-700);
+      color:#fff;
+      border:none;
+      padding:10px 20px;
+      border-radius:6px;
+      cursor:pointer;
+    }
+    /* Responsive */
+    @media(max-width:800px){
+      .sidebar{
+        transform:translateX(-100%);
+        position:fixed;
+        z-index:100;
+      }
+      .sidebar.open{transform:translateX(0)}
+      .menu-btn{
+        display:block;
+        background:var(--blue-700);
+        color:#fff;
+        border:none;
+        padding:10px 15px;
+        border-radius:6px;
+        margin-bottom:10px;
+        cursor:pointer;
+      }
+      .main{margin-left:0}
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <div class="brand">Sopiaa Imutt</div>
+    <div class="nav">
+      <a href="#" class="active" data-page="home">Home</a>
+      <a href="#" data-page="about">About Me</a>
+      <a href="#" data-page="experience">Experience</a>
+      <a href="#" data-page="skills">Skills</a>
+      <a href="#" data-page="certificate">Sertificate</a>
+      <a href="#" data-page="contact">Contact</a>
+    </div>
+    <div class="lang-switch">
+      <button class="lang active" data-lang="en">EN</button>
+      <button class="lang" data-lang="id">ID</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <button class="menu-btn" id="menuBtn">☰ Menu</button>
+
+    <section id="home" class="page active">
+      <h2>Hi, I'm Sopiaa</h2>
+      <p>A passionate web developer creating elegant digital experiences with modern design and clean code.</p>
+    </section>
+
+    <section id="about" class="page">
+      <h2>About Me</h2>
+      <p>I love crafting responsive websites using HTML, CSS, and JavaScript. My focus is on front-end development and UI design.</p>
+    </section>
+
+    <section id="experience" class="page">
+      <h2>Experience</h2>
+      <ul>
+        <li>Frontend Developer – Company A (2022–Present)</li>
+        <li>UI Designer – Company B (2020–2022)</li>
+      </ul>
+    </section>
+
+    <section id="skills" class="page">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skil
